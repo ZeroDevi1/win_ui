@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "pnpm dev",
     "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
     "devPath": "http://localhost:1420",
     "distDir": "../dist",
     "withGlobalTauri": false
@@ -10,10 +10,12 @@
     "productName": "win_ui",
     "version": "0.0.0"
   },
+  "plugins": {
+    "updater": {
+      "endpoints": []
+    }
+  },
   "tauri": {
-    "allowlist": {
-      "all": true
-    },
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -45,27 +47,26 @@
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
-        "wix": {
-          "language": ["zh-CN"]
-        },
         "webviewInstallMode": {
           "type": "offlineInstaller"
+        },
+        "wix": {
+          "language": [
+            "zh-CN"
+          ]
         }
       }
     },
     "security": {
       "csp": null
     },
-    "updater": {
-      "active": false
-    },
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 768,
         "resizable": true,
         "title": "win_ui",
-        "width": 800
+        "width": 1366
       }
     ]
   }
